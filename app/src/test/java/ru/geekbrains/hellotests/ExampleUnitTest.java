@@ -25,6 +25,23 @@ public class ExampleUnitTest {
         Operation mock = mock(Operation.class);
         Calculation underTest = new Calculation(mock).setArg1(1).setArg2(1);
         underTest.calculate();
+
         verify(mock).doOperation(1,1);
+    }
+
+    @Test
+    public void inegrationTest(){
+        Operation add = new Addition();
+        Calculation underTest = new Calculation(add).setArg1(1).setArg2(1);
+        int actual = underTest.calculate();
+        assertEquals(2, actual);
+    }
+
+    public class stubOperation implements Operation{
+
+        @Override
+        public int doOperation(int arg1, int arg2) {
+            return 0;
+        }
     }
 }

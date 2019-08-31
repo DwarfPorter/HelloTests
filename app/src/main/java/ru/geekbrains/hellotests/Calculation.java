@@ -21,7 +21,7 @@ public class Calculation {
     }
 
     public int getArg2() {
-        return arg2;
+        return arg2 + 1;
     }
 
     public Calculation setArg2(int arg2) {

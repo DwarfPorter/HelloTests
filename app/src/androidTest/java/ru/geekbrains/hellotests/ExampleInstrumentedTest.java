@@ -42,7 +42,7 @@ public class ExampleInstrumentedTest {
                 .perform(click());
 
         onView(withId(R.id.result))
-            .check(matches(withText("2")));
+                .check(matches(withText("2")));
     }
 
     @Test
